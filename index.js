@@ -82,7 +82,7 @@ class Calculator {
 
 
     calculate(string){
-        var arr_c = (string.match(/([0-9]+)|\+|-|\*|\//g));
+            let arr_c = (string.match(/([0-9]+)|\+|-|\*|\//g));
 	    let i = -1;
 
 	    if(!arr_c || arr_c.length == 1) return string;
