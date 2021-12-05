@@ -1,0 +1,27 @@
+.buttons{
+    &__tools{
+        display: inline-grid;
+        grid-gap: 2px;
+    }
+    &__operators{
+        display: inline-grid;
+        grid-gap: 2px;
+        grid-template-columns: 1fr;
+    }
+    &__button{
+        background:rgb(199, 182, 182);
+        width: 50px;
+        height: 45px;
+        border: 2px solid rgb(255, 91, 3);
+        border-radius: 4px;
+    }
+    &__numbers{ 
+        display: inline-grid;
+        grid-gap: 2px;
+        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    }
+    &__button-equal{
+        height: 92px;
+        background: rgb(72, 197, 86);
+    }
+}
