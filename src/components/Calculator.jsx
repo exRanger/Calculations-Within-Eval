@@ -43,7 +43,6 @@ function transform(arr){
 function calculate(string){
     let arr_c = (string.match(/([0-9]+)|\+|-|\*|\//g));
     let i = -1;
-
     if(!arr_c || arr_c.length == 1) return string;
 
     while(i++ < arr_c.length - 1){
@@ -61,7 +60,7 @@ function calculate(string){
     }
 }
 
-i = -1;
+    i = -1;
 while(i++ < arr_c.length - 1){
 
     if(arr_c[i] == '+'){
@@ -117,9 +116,9 @@ const Calculator = () => {
 
         if(contains('buttons__numbers') || contains('buttons__operators')){
     
-            if(value){
+        if(value){
                setValue(prevValue => prevValue + target.textContent)
-            }else 
+        }else 
                setValue(target.textContent)
         }else if(target.classList.contains('buttons__button-equal')){
                setValue(finalCalculation(value))
