@@ -7,18 +7,17 @@ class Calculator {
         this.button.addEventListener('click', this.clickButton)  
     }
 
-    
     clickButton = (e) => {
 
         let {target} = e
-        
+	
         let querySelector = document.body.querySelector.bind(document.body)
+	
         let contains = target.parentNode.classList.contains.bind(target.parentNode.classList)
 
         if(contains('buttons_button')) return;
 
-        if(contains('buttons__numbers') || contains('buttons__operators')){
-            
+        if(contains('buttons__numbers') || contains('buttons__operators')){         
             querySelector('.calculator__output').textContent = ''
             querySelector('.calculator__output').value += target.innerHTML
         }
