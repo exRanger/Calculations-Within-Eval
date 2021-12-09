@@ -1,5 +1,4 @@
 import React from 'react'
-
 import '../sass/components/button.scss'
 
 const Button = ({value, className}) => {
