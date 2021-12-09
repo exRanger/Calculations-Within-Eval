@@ -136,10 +136,9 @@ class Calculator {
         }
 
         if(result.indexOf('(') >= 0)
-		return finalCalculation(result);
+	return finalCalculation(result);
 
-	    return this.calculate(result);
-
+	return this.calculate(result);
     } 
 }
 
