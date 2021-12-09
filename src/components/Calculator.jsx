@@ -29,7 +29,6 @@ function mathOperation(operation, arr){
     arr[secondIndex] = false;
 
     return transform(arr);
-
 }
 
 function transform(arr){
