@@ -110,8 +110,7 @@ const Calculator = () => {
     const numbers = ['1','2','3','4','5','6','7','8', '9'] 
 
     const handleClick = (e) => {
-
-        console.log('actions')
+        
         let {target} = e
         let contains = target.parentNode.classList.contains.bind(target.parentNode.classList)
         if(contains('buttons_button')) return;
@@ -119,24 +118,18 @@ const Calculator = () => {
         if(contains('buttons__numbers') || contains('buttons__operators')){
     
             if(value){
-                setValue(prevValue => prevValue + target.textContent)
+               setValue(prevValue => prevValue + target.textContent)
             }else 
-                setValue(target.textContent)
+               setValue(target.textContent)
         }else if(target.classList.contains('buttons__button-equal')){
-             
-            setValue(finalCalculation(value))
-        
+               setValue(finalCalculation(value))
         }else if(target.classList.contains('buttons__button-reset')){
-
-            setValue('')
-
+               setValue('')
         }else if(target.classList.contains('buttons__button-backspace')){
-
-            setValue(value.slice(0, value.length-1))
+               setValue(value.slice(0, value.length-1))
         }
     }
-
-
+    
     return (
         <div className="calculator">
         <Display value={value}/>
