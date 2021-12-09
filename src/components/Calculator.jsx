@@ -34,7 +34,6 @@ function mathOperation(operation, arr){
 
 function transform(arr){
     let tranformArr = [];
-
     for(let k = 0; k < arr.length; k++){
         if(arr[k] !== false) tranformArr.push(arr[k]);
     }
