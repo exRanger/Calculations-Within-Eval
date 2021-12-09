@@ -9,7 +9,7 @@ function mathOperation(operation, arr){
     let secondIndex = operation+1;
 
     switch(arr[operation]){
-
+            
         case '*':
             arr[firstIndex] = parseFloat(arr[firstIndex]) * parseFloat(arr[secondIndex]);
             break;
@@ -38,12 +38,11 @@ function transform(arr){
     for(let k = 0; k < arr.length; k++){
         if(arr[k] !== false) tranformArr.push(arr[k]);
     }
-
     return tranformArr;
 }
 
 function calculate(string){
-        let arr_c = (string.match(/([0-9]+)|\+|-|\*|\//g));
+    let arr_c = (string.match(/([0-9]+)|\+|-|\*|\//g));
     let i = -1;
 
     if(!arr_c || arr_c.length == 1) return string;
