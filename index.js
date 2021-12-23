@@ -2,7 +2,6 @@ const {log} = console
  
 class Calculator {
     constructor(button){
-        console.log(button)
         this.button = button
         this.button.addEventListener('click', this.clickButton)  
     }
@@ -42,62 +41,62 @@ class Calculator {
 
     mathOperation(operation, arr){
 
-        let firstIndex = operation-1;
-        let secondIndex = operation+1;
+        let firstIndex = operation-1
+        let secondIndex = operation+1
     
         switch(arr[operation]){
     
             case '*':
-                arr[firstIndex] = parseFloat(arr[firstIndex]) * parseFloat(arr[secondIndex]);
+                arr[firstIndex] = parseFloat(arr[firstIndex]) * parseFloat(arr[secondIndex])
                 break;
     
             case '/':
-                arr[firstIndex] = parseFloat(arr[firstIndex]) / parseFloat(arr[secondIndex]);
+                arr[firstIndex] = parseFloat(arr[firstIndex]) / parseFloat(arr[secondIndex])
                 break;
             case '+':
-                arr[firstIndex] = parseFloat(arr[firstIndex]) + parseFloat(arr[secondIndex]);
+                arr[firstIndex] = parseFloat(arr[firstIndex]) + parseFloat(arr[secondIndex])
                 break;
             case '-':
-                arr[firstIndex] = parseFloat(arr[firstIndex]) - parseFloat(arr[secondIndex]);
+                arr[firstIndex] = parseFloat(arr[firstIndex]) - parseFloat(arr[secondIndex])
                 break;
         }
     
-        arr[operation] = false;
-        arr[secondIndex] = false;
+        arr[operation] = false
+        arr[secondIndex] = false
     
-        return this.transform(arr);
+        return this.transform(arr)
     
     }
 
     transform(arr){
-        let tranformArr = [];
+        let tranformArr = []
 
         for(let k = 0; k < arr.length; k++){
-            if(arr[k] !== false) tranformArr.push(arr[k]);
+            if(arr[k] !== false) tranformArr.push(arr[k])
         }
 
-	    return tranformArr;
+	    return tranformArr
     }
 
 
     calculate(string){
-            let arr_c = (string.match(/([0-9]+)|\+|-|\*|\//g));
-	    let i = -1;
+            let arr_c = (string.match(/([0-9]+)|\+|-|\*|\//g))
+	    let i = -1
 
-	    if(!arr_c || arr_c.length == 1) return string;
+	    if(!arr_c || arr_c.length == 1) return string
 
 	    while(i++ < arr_c.length - 1){
 		    if(arr_c[i] == '*'){
-			    arr_c = this.mathOperation(i, arr_c);
-			    i = i-1;
+			    arr_c = this.mathOperation(i, arr_c)
+			    i = i-1
 		    }
 	    }
 	
-	    i = -1;
+	    i = -1
 	    while(i++ < arr_c.length - 1){
 		    if(arr_c[i] == '/'){
-			    arr_c = this.mathOperation(i, arr_c);
-			    i--;
+			    arr_c = this.mathOperation(i, arr_c)
+			    i--
 		}
 	}
 	
@@ -105,18 +104,18 @@ class Calculator {
 	while(i++ < arr_c.length - 1){
 
 		if(arr_c[i] == '+'){
-			arr_c = this.mathOperation(i, arr_c);
-			i--;
+			arr_c = this.mathOperation(i, arr_c)
+			i--
 		}
 
 		if(arr_c[i] == '-'){
-			arr_c = this.mathOperation(i, arr_c);
-			i--;
+			arr_c = this.mathOperation(i, arr_c)
+			i--
 		}
 
 	}
 
-	return arr_c[0];
+	return arr_c[0]
 
     }
 
@@ -131,14 +130,15 @@ class Calculator {
         }
 
         for(let k = 0; k < subCalculations.length; k++){
-            insideCalc = subCalculations[k].replace(/\(|\)/g, '');
-		    result = result.replace('('+insideCalc+')', this.calculate(insideCalc));
+            insideCalc = subCalculations[k].replace(/\(|\)/g, '')
+		    result = result.replace('('+insideCalc+')', this.calculate(insideCalc))
         }
 
-        if(result.indexOf('(') >= 0)
-	return finalCalculation(result);
-
-	return this.calculate(result);
+        if(result.indexOf('(') >= 0){
+		return finalCalculation(result)
+	}
+	    
+	return this.calculate(result)
     } 
 }
 
