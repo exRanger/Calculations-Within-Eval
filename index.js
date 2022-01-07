@@ -48,7 +48,6 @@ class Calculator {
             case '*':
                 arr[firstIndex] = parseFloat(arr[firstIndex]) * parseFloat(arr[secondIndex])
                 break;
-    
             case '/':
                 arr[firstIndex] = parseFloat(arr[firstIndex]) / parseFloat(arr[secondIndex])
                 break;
