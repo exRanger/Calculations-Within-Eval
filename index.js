@@ -87,7 +87,7 @@ class Calculator {
 	    while(i++ < arr_c.length - 1){
 		    if(arr_c[i] == '*'){
 			    arr_c = this.mathOperation(i, arr_c)
-			    i = i-1
+			    i = i - 1
 		    }
 	    }
 	
