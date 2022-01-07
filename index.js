@@ -28,7 +28,7 @@ class Calculator {
 
             querySelector('.calculator__output').value = ''
 
-        }else if(target.classList.contains('buttons__button-backspace')){
+        }else if(contains('buttons__button-backspace')){
         
             let val =  querySelector('.calculator__output').value
              
