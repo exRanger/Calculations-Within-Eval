@@ -11,7 +11,6 @@ class Calculator {
         let {target} = e
 	
         let querySelector = document.body.querySelector.bind(document.body)
-	
         let contains = target.parentNode.classList.contains.bind(target.parentNode.classList)
 
         if(contains('buttons_button')) return;
@@ -21,7 +20,7 @@ class Calculator {
             querySelector('.calculator__output').value += target.innerHTML
         }
 
-        if(target.classList.contains('buttons__button-equal')){
+        if(contains('buttons__button-equal')){
              
             querySelector('.calculator__output').value = this.finalCalculation(querySelector('.calculator__output').value)
         
