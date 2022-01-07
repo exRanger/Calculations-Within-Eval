@@ -40,8 +40,8 @@ class Calculator {
 
     mathOperation(operation, arr){
 
-        let firstIndex = operation-1
-        let secondIndex = operation+1
+        let firstIndex = operation - 1
+        let secondIndex = operation + 1
     
         switch(arr[operation]){
     
