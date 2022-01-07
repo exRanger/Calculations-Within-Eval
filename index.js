@@ -24,7 +24,7 @@ class Calculator {
              
             querySelector('.calculator__output').value = this.finalCalculation(querySelector('.calculator__output').value)
         
-        }else if(target.classList.contains('buttons__button-reset')){
+        }else if(contains('buttons__button-reset')){
 
             querySelector('.calculator__output').value = ''
 
